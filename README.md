@@ -36,9 +36,8 @@ Make the script executable this comand:
 
 Edit  file sudo or nano <code>vi /etc/pam.d/sshd</code> and add the following to the end:   
 
-...
 # SSH Alert script
-   session required pam_exec.so /etc/pam.scripts/login-notification.s
+    session required pam_exec.so /etc/pam.scripts/login-notification.sh
 
 This will trigger the script every login and every logout and you will get notified by telegram about ssh logins.
 
