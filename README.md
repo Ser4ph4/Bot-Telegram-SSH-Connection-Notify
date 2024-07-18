@@ -14,7 +14,7 @@ Now, search for the newly created bot in your Telegram contacts. Next, start the
 <code>/start.</code>
 Next, open Postman or your Browser to the address shown below. Replace "TOKEN" with the token you got from "botfather" in the previous step:
 
-https://api.telegram.org/bot"TOKEN"/getUpdates
+<code>https://api.telegram.org/bot"TOKEN"/getUpdates</code>
 Write down the row of numbers coming after "id". This is our "Telegram_id" and will be needed in the next step.
 # 3- Create the Script
     sudo mkdir /etc/pam.scripts
