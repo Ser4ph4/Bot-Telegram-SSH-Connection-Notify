@@ -19,6 +19,7 @@ Write down the row of numbers coming after "id". This is our "Telegram_id" and w
 # 3- Create the Script
     sudo mkdir /etc/pam.scripts
 Save this script in or other place <code>/etc/pam.scripts/login-notification.sh</code>
+
 <code>
 #!/bin/bash
 
