@@ -32,5 +32,5 @@ Save this script in or other place <code>/etc/pam.scripts/login-notification.sh<
 
 Make the script executable this comand: 
 
-    sudo chmod +x /etc/pam.scripts/login-notification.sh
+        sudo chmod +x /etc/pam.scripts/login-notification.sh
     
