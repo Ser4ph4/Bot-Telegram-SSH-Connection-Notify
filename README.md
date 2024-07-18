@@ -30,3 +30,5 @@ Save this script in or other place <code>/etc/pam.scripts/login-notification.sh<
     curl -s -X POST $URL -d chat_id=$ID -d text="$MESSAGE" -d parse_mode='HTML' 2>&1 /dev/null
     exit 0   
 
+Make the script executable this comand:
+    sudo chmod +x /etc/pam.scripts/login-notification.sh
