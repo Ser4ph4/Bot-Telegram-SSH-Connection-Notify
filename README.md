@@ -34,4 +34,9 @@ Make the script executable this comand:
 
         sudo chmod +x /etc/pam.scripts/login-notification.sh
 
-Edit  file sudo or nano <code>vi /etc/pam.d/sshd</code> and add the following to the end:    
+Edit  file sudo or nano <code>vi /etc/pam.d/sshd</code> and add the following to the end:   
+
+    ...
+# SSH Alert script
+session required pam_exec.so /etc/pam.scripts/login-notification.sh
+
