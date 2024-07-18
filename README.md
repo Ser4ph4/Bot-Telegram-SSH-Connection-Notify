@@ -42,3 +42,12 @@ Edit  file sudo or nano <code>vi /etc/pam.d/sshd</code> and add the following to
 
 This will trigger the script every login and every logout and you will get notified by telegram about ssh logins.
 
+├───📄 README.md
+├───📄 image.png
+└───📄 ssh-logo.png
+
+Credits:(https://github.com/marcogreiveldinger/videos/tree/main/ssh-login-alerts)
+This repository is a personal backup, as I made some changes to the code I thought it would be better.
+Credits are cited and maintained
+Big hug.
+
