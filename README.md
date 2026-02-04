@@ -36,70 +36,98 @@ Features:
 ```
 
 
-## 📦 Instalação
+## 📦 Installation
 
-### 1. Fazer Download do Script
+### 1.Creat file script
 
 ```bash
 # Ou criar manualmente
 nano /usr/local/bin/ssh-telegram-alert.sh
-# Cole o conteúdo do script
+# Cole o conteúdo do script - (ssh-telegram-alert.sh)
 ```
 
-### 2. Configurar Permissões
+### 2. Configure Permissions
 
 ```bash
 chmod +x /usr/local/bin/ssh-telegram-alert.sh
 chown root:root /usr/local/bin/ssh-telegram-alert.sh
 ```
 
-### 3. Criar Diretório de Configuração
+### 3. Create Configuration Directory
 
 ```bash
 mkdir -p /etc/telegram
 chmod 700 /etc/telegram
 ```
 
-### 4. Criar Arquivo de Configuração
+### 4. Create Configuration File
 
 ```bash
 nano /etc/telegram/config.env
 ```
 
-Conteúdo:
+Content:
 ```bash
 TELEGRAM_BOT_TOKEN="seu_token_aqui"
 TELEGRAM_CHAT_ID="seu_chat_id_aqui"
 ```
+## ⚙️ Settings
+### Obter Token do Bot
+1. Open Telegram and search for **@BotFather**
+2. Send `/newbot`
+3. Follow the instructions.
+4. Copy the provided token.
 
+### Obter Chat ID
+
+1. Search for **@userinfobot** not Telegram
+2. Send any message
+3. The bot will respond with your Chat ID.
+4. 
 ```bash
 chmod 600 /etc/telegram/config.env
 chown root:root /etc/telegram/config.env
 ```
 
-### 5. Configurar PAM
-
-Edite o arquivo PAM do SSH:
+### 5.Configure PAM
+Edit the SSH PAM file:
 ```bash
 nano /etc/pam.d/sshd
 ```
-
-Adicione no **final** do arquivo:
+Add this to the **end** of the file:
 ```bash
 # Telegram SSH Alert
 session optional pam_exec.so quiet /usr/local/bin/ssh-telegram-alert.sh
 ```
 
-### 6. Criar Diretório de Logs
+### 6.Create Log Directory
 
 ```bash
 mkdir -p /var/log
 touch /var/log/telegram-ssh-alert.log
 chmod 644 /var/log/telegram-ssh-alert.log
 ```
+## 🧪 Test
+
+### Manual Test (In terminal)
+
+```bash
+# Simular variáveis PAM
+export PAM_USER="testuser"
+export PAM_RHOST="8.8.8.8"
+export PAM_TYPE="open_session"
+export PAM_SERVICE="sshd"
+export PAM_TTY="pts/0"
+
+# Executar script
+/usr/local/bin/ssh-telegram-alert.sh
+```
+
+### Check Logs
+
+```bash
+tail -f /var/log/telegram-ssh-alert.log
+```
 
 ---
-
----
-
 ☁️**Developed for VPS with a focus on security and monitoring**
