@@ -1,13 +1,12 @@
 #!/bin/bash
 ################################################################################
-# SSH Telegram Alert Script - Versão Melhorada
+# SSH Telegram Alert Script - 
 # Data: 2026-02-04
 ################################################################################
 ################################################################################
 # CONFIGURAÇÃO
 ################################################################################
-
-# Telegram Configuration (carregue de arquivo externo por segurança)
+# Telegram Configuration
 TELEGRAM_CONFIG="/etc/telegram/config.env"
 if [[ -f "${TELEGRAM_CONFIG}" ]]; then
     source "${TELEGRAM_CONFIG}"
